@@ -38,6 +38,17 @@ namespace SolidPrinciples
     }
     class SingleResponsibility
     {
+        public SingleResponsibility(RelationShips relationships)
+        {
+            var relations = relationships.Relations;
+            foreach(var r in relations.Where(
+                x => x.Item1.Name=="John" &&
+                     x.Item2 == Relationship.Parent
+                ))
+            {
+                Console.WriteLine($"John has a child called {r.Item3.Name}");
+            }
+        }
         static public int Area(Rectangle r) => r.Width * r.Height;
         static void Main(string[] args)
         {
@@ -85,16 +96,27 @@ namespace SolidPrinciples
 
             #region Using Code for Liskov Substitution Principle in Main method
 
-            Rectangle rc = new Rectangle(2,3);
-            Console.WriteLine($"{rc} has area {Area(rc)}");
+            //Rectangle rc = new Rectangle(2,3);
+            //Console.WriteLine($"{rc} has area {Area(rc)}");
 
-            Rectangle Sq = new Square();
-            Sq.Width = 4;
-            Console.WriteLine($"{Sq} has area {Area(Sq)}");
+            //Rectangle Sq = new Square();
+            //Sq.Width = 4;
+            //Console.WriteLine($"{Sq} has area {Area(Sq)}");
             #endregion
 
             #region Code for implementing Interface Segregation Principle
 
+            #endregion
+            #region Code for implementing Dependency Inversion Principle
+
+            var parent = new Person { Name = "John" };
+            var child1 = new Person { Name = "Chris" };
+            var child2 = new Person { Name = "Mary" };
+
+            var relationships = new RelationShips();
+            relationships.AddParentAndChild(parent, child1);
+            relationships.AddParentAndChild(parent, child2);
+            new SingleResponsibility(relationships);
             #endregion
         }
     }
