@@ -88,7 +88,7 @@ namespace SolidPrinciples
             Rectangle rc = new Rectangle(2,3);
             Console.WriteLine($"{rc} has area {Area(rc)}");
 
-            Square Sq = new Square();
+            Rectangle Sq = new Square();
             Sq.Width = 4;
             Console.WriteLine($"{Sq} has area {Area(Sq)}");
             #endregion
