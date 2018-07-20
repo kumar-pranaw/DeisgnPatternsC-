@@ -92,6 +92,10 @@ namespace SolidPrinciples
             Sq.Width = 4;
             Console.WriteLine($"{Sq} has area {Area(Sq)}");
             #endregion
+
+            #region Code for implementing Interface Segregation Principle
+
+            #endregion
         }
     }
 }
