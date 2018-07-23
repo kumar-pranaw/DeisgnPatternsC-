@@ -9,10 +9,10 @@ namespace BuilderDesignPattern
     public class Person
     {
         public string Name;
-
         public string Position;
+        public string DateOFBirth;
 
-        public class Builder : PersonJobBuilder<Builder>
+        public class Builder : PersonDetailsBuilder<Builder>
         {
 
         }
@@ -20,7 +20,7 @@ namespace BuilderDesignPattern
 
         public override string ToString()
         {
-            return $"{nameof(Name)}: {Name}, {nameof(Position)}: {Position}";
+            return $"{nameof(Name)}: {Name}, {nameof(Position)}: {Position},{nameof(DateOFBirth)}:{DateOFBirth}";
         }
     }
 
@@ -34,7 +34,8 @@ namespace BuilderDesignPattern
             return person;
         }
     }
-    public class PersonInfoBuilder<SELF> : PersonBuilder<PersonInfoBuilder<SELF>>
+  
+   public class PersonInfoBuilder<SELF> : PersonBuilder<PersonInfoBuilder<SELF>>
    where SELF : PersonInfoBuilder<SELF>
     {
         public SELF Called(string name)
@@ -52,12 +53,21 @@ namespace BuilderDesignPattern
             return (SELF)this;
         }
     }
+    public class PersonDetailsBuilder<SELF> : PersonJobBuilder<PersonDetailsBuilder<SELF>>
+      where SELF : PersonDetailsBuilder<SELF>
+    {
+        public SELF BornAt(string dob)
+        {
+            person.DateOFBirth = dob;
+            return (SELF)this;
+        }
+    }
     public class FluentBuilder
     {
         public static void FluentBuilderDemo()
         {
             var builder = new Person.Builder();
-            var person = builder.Called("Pranav").WorksAsA("Accountant").Build();
+            var person = builder.Called("Pranav").WorksAsA("Accountant").BornAt("11-02-1995").Build();
             Console.WriteLine(person);
         }
     }
