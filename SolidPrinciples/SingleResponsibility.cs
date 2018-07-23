@@ -38,15 +38,12 @@ namespace SolidPrinciples
     }
     class SingleResponsibility
     {
-        public SingleResponsibility(RelationShips relationships)
+        public SingleResponsibility(IRelationshipBrowser browser)
         {
-            var relations = relationships.Relations;
-            foreach(var r in relations.Where(
-                x => x.Item1.Name=="John" &&
-                     x.Item2 == Relationship.Parent
-                ))
+            
+            foreach(var r in browser.FindAllChindrenOf("John"))
             {
-                Console.WriteLine($"John has a child called {r.Item3.Name}");
+                Console.WriteLine($"John has a child called {r.Name}");
             }
         }
         static public int Area(Rectangle r) => r.Width * r.Height;
@@ -107,6 +104,7 @@ namespace SolidPrinciples
             #region Code for implementing Interface Segregation Principle
 
             #endregion
+
             #region Code for implementing Dependency Inversion Principle
 
             var parent = new Person { Name = "John" };

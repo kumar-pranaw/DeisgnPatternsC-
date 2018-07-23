@@ -20,19 +20,33 @@ namespace SolidPrinciples
     {
         IEnumerable<Person> FindAllChindrenOf(string name);
     }
-    
-//Low Level
-public class RelationShips
-{
-    private List<(Person, Relationship, Person)> relations = new List<(Person, Relationship, Person)>();
-    public void AddParentAndChild(Person parent, Person child)
+
+
+    //Low Level
+    public class RelationShips : IRelationshipBrowser
     {
-        relations.Add((parent, Relationship.Parent, child));
-        relations.Add((child, Relationship.Child, child));
+        private List<(Person, Relationship, Person)> relations = new List<(Person, Relationship, Person)>();
+        public void AddParentAndChild(Person parent, Person child)
+        {
+            relations.Add((parent, Relationship.Parent, child));
+            relations.Add((child, Relationship.Child, child));
+        }
+
+        public IEnumerable<Person> FindAllChindrenOf(string name)
+        {
+            foreach (var r in relations.Where(
+                x => x.Item1.Name == name &&
+                x.Item2 == Relationship.Parent
+                ))
+            {
+                yield return r.Item3;
+            }
+        }
+
+        //  public List<(Person, Relationship, Person)> Relations => relations;
     }
-    public List<(Person, Relationship, Person)> Relations => relations;
-}
-public class DependencyInversionPrinciple
-{
-}
+ 
+    public class DependencyInversionPrinciple
+    {
+    }
 }
