@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{218F13C2-47DC-4BDC-8D02-0FCB1C6ED7CF}</ProjectGuid>
+    <ProjectGuid>{F2630146-E395-4090-AC99-5EA905C7B520}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>BuilderDesignPattern</RootNamespace>
-    <AssemblyName>BuilderDesignPattern</AssemblyName>
+    <RootNamespace>SingletonDesignPattern</RootNamespace>
+    <AssemblyName>SingletonDesignPattern</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,14 +42,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FluentBuilder.cs" />
-    <Compile Include="FluentBuilderWithRecursiveGenerics.cs" />
+    <Compile Include="IDatabase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WithoutBuilder.cs" />
+    <Compile Include="SingletonDatabase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="capitals.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
