@@ -6,39 +6,42 @@ using System.Threading.Tasks;
 
 namespace FactoryPattern
 {
-    public enum CoordinateSystem
-    {
-        Cartesian,
-        Polar
-    }
-    class Point
+    
+    public class Point
     {
         private double x, y;
-        /// <summary>
-        /// Initializes a point from Either cartesian or polar
-        /// </summary>
-        /// <param name="a"> x if Cartesian rho if polar</param>
-        /// <param name="b"></param>
-        /// <param name="system"></param>
-        public Point(double a, double b, CoordinateSystem system = CoordinateSystem.Cartesian)
+        // Constructor
+        public Point(double x, double y)
         {
-            switch (system)
+            this.x = x;
+            this.y = y;
+        }
+        public override string ToString()
+        {
+            return $"{nameof(x)}: {x}, {nameof(y)}: {y}";
+        }
+        public class Factory
+        {
+            public static Point NewCartesianPoint(double x, double y)
             {
-                case CoordinateSystem.Cartesian:
-                    x = a;
-                    y = b;
-                    break;
-                case CoordinateSystem.Polar:
-                    x = a * Math.Cos(b);
-                    y = b * Math.Sin(b);
-                    break;
-                default:
-                    break;
+                return new Point(x, y);
+            }
+
+            public static Point NewPolarPoint(double rho, double theta)
+            {
+                return new Point(rho * Math.Cos(theta), rho * Math.Sin(theta));
             }
         }
- 
+    }
+
+    public class Demo
+    {
         static void Main(string[] args)
         {
+            var pointCartesian = Point.Factory.NewCartesianPoint(2.0, 3.0);
+            var pointPolar = Point.Factory.NewPolarPoint(1.0, Math.PI / 2);
+            Console.WriteLine(pointPolar);
         }
     }
+
 }
