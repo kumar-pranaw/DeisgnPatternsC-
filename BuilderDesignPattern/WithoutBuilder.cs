@@ -91,17 +91,24 @@ namespace BuilderDesignPattern
             sb.Append("</ul>");
             WriteLine(sb);
 
-        }
-    }
-    public class WithBuilder
-    {
-        public static void LifeWithBuilder()
-        {
+
             /* Code after using builder pattern*/
             var builder = new HtmlBuilder("ul");
             builder.AddChild("li", "Hello").AddChild("li", "World");
             //builder.AddChild("li", "World");
             WriteLine(builder.ToString());
+
         }
     }
+    //public class WithBuilder
+    //{
+    //    public static void LifeWithBuilder()
+    //    {
+    //        /* Code after using builder pattern*/
+    //        var builder = new HtmlBuilder("ul");
+    //        builder.AddChild("li", "Hello").AddChild("li", "World");
+    //        builder.AddChild("li", "World");
+    //        WriteLine(builder.ToString());
+    //    }
+    //}
 }
