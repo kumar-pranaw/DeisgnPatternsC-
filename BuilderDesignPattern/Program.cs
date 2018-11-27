@@ -10,7 +10,7 @@ namespace BuilderDesignPattern
     {
         static void Main(string[] args)
         {
-<<<<<<< HEAD
+
             FluentBuilder.FluentBuilderDemo();
           //  WithBuilder.LifeWithBuilder();
             WithoutBuilder.LifeWithoutBuilder();
