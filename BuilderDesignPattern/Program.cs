@@ -10,9 +10,17 @@ namespace BuilderDesignPattern
     {
         static void Main(string[] args)
         {
+<<<<<<< HEAD
             FluentBuilder.FluentBuilderDemo();
           //  WithBuilder.LifeWithBuilder();
             WithoutBuilder.LifeWithoutBuilder();
+=======
+            //FluentBuilder.FluentBuilderDemo();
+            //WithBuilder.LifeWithBuilder();
+            //WithoutBuilder.LifeWithoutBuilder();
+          var builder =   new PersonJobBuilder()
+                builder.called("Pranav").
+>>>>>>> c84ddd1d60a19eced2fcf43dd22cb019f5b5062f
         }
     }
 }

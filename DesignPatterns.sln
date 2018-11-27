@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolidPrinciples", "SolidPri
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuilderDesignPattern", "BuilderDesignPattern\BuilderDesignPattern.csproj", "{218F13C2-47DC-4BDC-8D02-0FCB1C6ED7CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingletonDesignPattern", "SingletonDesignPattern\SingletonDesignPattern.csproj", "{F2630146-E395-4090-AC99-5EA905C7B520}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryPattern", "FactoryPattern\FactoryPattern.csproj", "{1ADD2CD2-75AC-429A-A9E1-16CB277731C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{218F13C2-47DC-4BDC-8D02-0FCB1C6ED7CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{218F13C2-47DC-4BDC-8D02-0FCB1C6ED7CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{218F13C2-47DC-4BDC-8D02-0FCB1C6ED7CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2630146-E395-4090-AC99-5EA905C7B520}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2630146-E395-4090-AC99-5EA905C7B520}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2630146-E395-4090-AC99-5EA905C7B520}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2630146-E395-4090-AC99-5EA905C7B520}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1ADD2CD2-75AC-429A-A9E1-16CB277731C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1ADD2CD2-75AC-429A-A9E1-16CB277731C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1ADD2CD2-75AC-429A-A9E1-16CB277731C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1ADD2CD2-75AC-429A-A9E1-16CB277731C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
