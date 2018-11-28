@@ -29,7 +29,7 @@ namespace SolidPrinciples
         public void AddParentAndChild(Person parent, Person child)
         {
             relations.Add((parent, Relationship.Parent, child));
-            relations.Add((child, Relationship.Child, child));
+            relations.Add((child, Relationship.Child, parent));
         }
 
         public IEnumerable<Person> FindAllChindrenOf(string name)
