@@ -13,8 +13,8 @@ namespace BuilderDesignPattern
             //FluentBuilder.FluentBuilderDemo();
             //WithBuilder.LifeWithBuilder();
             //WithoutBuilder.LifeWithoutBuilder();
-          var builder =   new PersonJobBuilder()
-                builder.called("Pranav").
+          //var builder =   new PersonJobBuilder()
+          //      builder.called("Pranav").
         }
     }
 }
