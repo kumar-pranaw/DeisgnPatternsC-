@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static FactoryPattern.AbstractFactory;
 
 namespace FactoryPattern
 {
@@ -39,8 +40,11 @@ namespace FactoryPattern
         static void Main(string[] args)
         {
             //Calling Abstract Factory Class In main
-            var machine = new AbstractFactory.HotDrinkMAchine();
-            var drink = machine.MakeDrink(AbstractFactory.HotDrinkMAchine.AvailableDrink.Tea, 100);
+            var machine = new HotDrinkMachine();
+            //var drink = machine.MakeDrink(HotDrinkMachine.AvailableDrink.Tea, 300);
+            //drink.Consume();
+
+            IHotDrink drink = machine.MakeDrink();
             drink.Consume();
 
             //var pointCartesian = Point.Factory.NewCartesianPoint(2.0, 3.0);
