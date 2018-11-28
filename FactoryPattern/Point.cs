@@ -38,9 +38,14 @@ namespace FactoryPattern
     {
         static void Main(string[] args)
         {
-            var pointCartesian = Point.Factory.NewCartesianPoint(2.0, 3.0);
-            var pointPolar = Point.Factory.NewPolarPoint(1.0, Math.PI / 2);
-            Console.WriteLine(pointPolar);
+            //Calling Abstract Factory Class In main
+            var machine = new AbstractFactory.HotDrinkMAchine();
+            var drink = machine.MakeDrink(AbstractFactory.HotDrinkMAchine.AvailableDrink.Tea, 100);
+            drink.Consume();
+
+            //var pointCartesian = Point.Factory.NewCartesianPoint(2.0, 3.0);
+            //var pointPolar = Point.Factory.NewPolarPoint(1.0, Math.PI / 2);
+            //Console.WriteLine(pointPolar);
         }
     }
 
