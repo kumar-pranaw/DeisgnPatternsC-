@@ -40,16 +40,16 @@ namespace FactoryPattern
         static void Main(string[] args)
         {
             //Calling Abstract Factory Class In main
-            var machine = new HotDrinkMachine();
+            //var machine = new HotDrinkMachine();
             //var drink = machine.MakeDrink(HotDrinkMachine.AvailableDrink.Tea, 300);
             //drink.Consume();
 
-            IHotDrink drink = machine.MakeDrink();
-            drink.Consume();
+            //IHotDrink drink = machine.MakeDrink();
+            //drink.Consume();
 
-            //var pointCartesian = Point.Factory.NewCartesianPoint(2.0, 3.0);
-            //var pointPolar = Point.Factory.NewPolarPoint(1.0, Math.PI / 2);
-            //Console.WriteLine(pointPolar);
+            var pointCartesian = Point.Factory.NewCartesianPoint(2.0, 3.0);
+            var pointPolar = Point.Factory.NewPolarPoint(1.0, Math.PI / 2);
+            Console.WriteLine(pointPolar);
         }
     }
 
